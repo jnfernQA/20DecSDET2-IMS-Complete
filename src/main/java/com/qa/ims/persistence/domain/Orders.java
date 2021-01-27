@@ -6,30 +6,30 @@ import java.util.List;
 public class Orders {
 	
 	private Long id;
-	private Customer customer;
+	private Long fk_customerId;
 	private double orderPrice;
 	private List<Items> items = new ArrayList<>();
 	
-	public Orders(Long id, Customer customer, double orderPrice, List<Items> items) {
+	public Orders(Long id, Long fk_customerId, double orderPrice, List<Items> items) {
 		super();
 		this.id = id;
-		this.customer = customer;
+		this.setFk_customerId(fk_customerId);
 		this.orderPrice = orderPrice;
 		this.items = items;
 		
 	}
 	
-	public Orders(Long id, Customer customer, double orderPrice) {
+	public Orders(Long id,Long fk_customerId, double orderPrice) {
 		super();
 		this.id = id;
-		this.customer = customer;
+		this.setFk_customerId(fk_customerId);
 		this.orderPrice = orderPrice;
 		
 	}
 	
-	public Orders( Customer customer, double orderPrice) {
+	public Orders( Long fk_customerId, double orderPrice) {
 		super();
-		this.customer = customer;
+		this.setFk_customerId(fk_customerId);
 		this.orderPrice = orderPrice;
 		
 	}
@@ -43,13 +43,7 @@ public class Orders {
 		this.id = id;
 	}
 
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+	
 
 	public double getOrderPrice() {
 		return orderPrice;
@@ -67,16 +61,25 @@ public class Orders {
 		this.items = items;
 	}
 
+	public Long getFk_customerId() {
+		return fk_customerId;
+	}
+
+	public void setFk_customerId(Long fk_customerId) {
+		this.fk_customerId = fk_customerId;
+	}
+
 	@Override
 	public String toString() {
-		return "Orders [id=" + id + ", customer=" + customer + ", orderPrice=" + orderPrice + ", items=" + items + "]";
+		return "Orders [id=" + id + ", fk_customerId=" + fk_customerId + ", orderPrice=" + orderPrice + ", items="
+				+ items + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((customer == null) ? 0 : customer.hashCode());
+		result = prime * result + ((fk_customerId == null) ? 0 : fk_customerId.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((items == null) ? 0 : items.hashCode());
 		long temp;
@@ -94,10 +97,10 @@ public class Orders {
 		if (getClass() != obj.getClass())
 			return false;
 		Orders other = (Orders) obj;
-		if (customer == null) {
-			if (other.customer != null)
+		if (fk_customerId == null) {
+			if (other.fk_customerId != null)
 				return false;
-		} else if (!customer.equals(other.customer))
+		} else if (!fk_customerId.equals(other.fk_customerId))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -113,7 +116,7 @@ public class Orders {
 			return false;
 		return true;
 	}
-	
+
 	
 	
 	
