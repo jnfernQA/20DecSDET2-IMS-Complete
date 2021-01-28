@@ -152,6 +152,7 @@ public class OrdersDao implements IDomainDao<Orders> {
 		return 0;
 	}
 	
+	//calculate method got from Nick
 	public double calculateOrderValue(Long orderId) {
 		double value = this.getItems(orderId).stream().map(item -> item.getItem_price()).reduce((acc, next) -> acc + next)
 				.orElse(0.0);
@@ -196,29 +197,4 @@ public class OrdersDao implements IDomainDao<Orders> {
 		
 	}
 	
-	
-	
-		
-	
-	
-	
-	
-	
-
-	
-	
-	
-
-	
-
-
-	
-	
-
-
-
-	
-	
-	
-
 }
