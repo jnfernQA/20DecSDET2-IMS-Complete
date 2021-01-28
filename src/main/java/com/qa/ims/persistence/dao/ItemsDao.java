@@ -37,7 +37,7 @@ public class ItemsDao implements IDomainDao<Items> {
 	}       
 	  
 	
-	 public Items read(Long id) {
+	 public Items readItems(Long id) {
 	        try (Connection connection = DatabaseUtilities.getInstance().getConnection();
 	                PreparedStatement statement = connection.prepareStatement("SELECT * FROM items WHERE id = ?");) {
 	            statement.setLong(1, id);
@@ -90,7 +90,7 @@ public class ItemsDao implements IDomainDao<Items> {
 	            statement.setDouble(2, items.getItem_price());
 	            statement.setLong(3, items.getId());
 	            statement.executeUpdate();
-	            return read(items.getId());
+	            return readItems(items.getId());
 	        } catch (Exception e) {
 	            LOGGER.debug(e);
 	            LOGGER.error(e.getMessage());
@@ -116,6 +116,9 @@ public class ItemsDao implements IDomainDao<Items> {
 	        double item_price = resultSet.getDouble("item_price");
 	        return new Items(id, item_name, item_price);
 	    }
+	 	
+	 	
+
 
 
 }
