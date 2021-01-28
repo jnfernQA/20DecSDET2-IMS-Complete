@@ -16,7 +16,8 @@
   
   @Before public void setup() { DatabaseUtilities.connect();
   DatabaseUtilities.getInstance().init("src/test/resources/sql-schema.sql",
-  "src/test/resources/sql-data.sql"); }
+  "src/test/resources/sql-data.sql"); 
+  }
   
   @Test public void testCreate() { final Customer created = new Customer(2L,
   "nick", "johnson"); assertEquals(created, DAO.create(created)); }
@@ -32,9 +33,6 @@
   Customer(ID, "jordan", "harrison"), DAO.read(ID)); }
   
   @Test public void testUpdate() { final Customer updated = new Customer(1L,
-  "nick", "johnson"); assertEquals(updated, DAO.update(updated));
-  
-  }
+  "nick", "johnson"); assertEquals(updated, DAO.update(updated));}
   
   @Test public void testDelete() { assertEquals(1, DAO.delete(1)); } }
- 
