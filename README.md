@@ -20,14 +20,14 @@ What things you need to install the software and how to install them
 ### Installing and Running
 
 
-
+```
 1.Clone this repository to your local repository using Gitbash
 2.Open the Eclipse IDE and open the project folder from your local repository
 3. Development of the code can be done in "/src/main/java"
 4.Open a console and change directory to the project folder and in console type "cd target" to move to the target folder and then type "java -jar ims-0.0.1-jar-with-dependencies.jar"
 5.Make sure in MySql the database follows the sql schema of provided in "src/main/resources"
 6.Running the fat.jar from step 4 will allow to start the IMS program
-
+```
 ## Running the tests
 
 Explain how to run the automated tests for this system. Break down into which tests and what they do
