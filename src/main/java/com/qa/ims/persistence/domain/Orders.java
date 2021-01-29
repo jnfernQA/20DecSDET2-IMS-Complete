@@ -27,6 +27,7 @@ public class Orders {
 		this.orderItems = orderItems;
 		
 	}
+	
 	public Orders(Long orderId, Customer customer, double orderValue) {
 		super();
 		this.orderId = orderId;
@@ -35,9 +36,11 @@ public class Orders {
 		
 		
 	}
+
 	
-	public Orders(Customer customer) {
+	public Orders(Long orderId,Customer customer) {
 		super();
+		this.orderId = orderId;
 		this.customer = customer;
 		
 	}
