@@ -65,19 +65,20 @@ public class OrdersDao implements IDomainDao<Orders> {
 	
 	@Override
 	public List<Orders> readAll() {
+		List<Orders> orders = new ArrayList<>();
 		try (Connection connection = DatabaseUtilities.getInstance().getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");) {
-            List<Orders> orders = new ArrayList<>();
+            
             while (resultSet.next()) {
                 orders.add(modelFromResultSet(resultSet));
             }
-            return orders;
+            
         } catch (SQLException e) {
             LOGGER.debug(e);
             LOGGER.error(e.getMessage());
         }
-        return new ArrayList<>();
+        return orders;
 	}
 	
 	private Orders readLatest() {
