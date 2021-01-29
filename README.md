@@ -1,7 +1,7 @@
-Coverage: 34%
-# Project Title
 
-One Paragraph of project description goes here
+# Project : INVENTORY MANAGEMENT SYSTEM (IMS)
+
+Uses a CRUD functionality for managing a database for Customers, Items and Orders
 
 ## Getting Started
 
@@ -12,26 +12,21 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+1.MySQL database 
+2.JDK 11 and Eclipse IDE
+3.Gitbash
 ```
 
-### Installing
+### Installing and Running
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+1.Clone this repository to your local repository using Gitbash
+2.Open the Eclipse IDE and open the project folder from your local repository
+3. Development of the code can be done in "/src/main/java"
+4.Open a console and change directory to the project folder and in console type "cd target" to move to the target folder and then type "java -jar ims-0.0.1-jar-with-dependencies.jar"
+5.Make sure in MySql the database follows the sql schema of provided in "src/main/resources"
+6.Running the fat.jar from step 4 will allow to start the IMS program
 
 ## Running the tests
 
